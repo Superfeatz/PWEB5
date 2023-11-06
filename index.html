@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kalkulator Sederhana dengan Vue.js</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+     body {
+      background-color: #333; /* Warna latar belakang gelap */
+      color: #fff; /* Warna teks putih */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .calculator {
+      background-color: #444; /* Warna latar belakang kalkulator */
+      border: 2px solid #555; /* Garis tepi */
+      border-radius: 5px; /* Sudut membulat */
+      padding: 20px;
+     
+      width: 100%;
+      text-align: center;
+    }
+
+    .calculator button {
+      margin: 2px;
+      background-color: whitesmoke;
+      color: #444; 
+    }
+
+ </style>
+  
+<body>
+  <div id="app" class="container-col">
+    <div class="calculator">
+      <input v-model="display" class="form-control mb-3" disabled>
+      <div class="row justify-content-center">
+        <button @click="addToDisplay('7')" class="btn btn-primary col-2">7</button>
+        <button @click="addToDisplay('8')" class="btn btn-primary col-2">8</button>
+        <button @click="addToDisplay('9')" class="btn btn-primary col-2">9</button>
+        <button @click="clearDisplay" class="btn btn-danger col-3">C</button>
+      </div>
+      <div class="row justify-content-center">
+        <button @click="addToDisplay('4')" class="btn btn-primary col-2">4</button>
+        <button @click="addToDisplay('5')" class="btn btn-primary col-2">5</button>
+        <button @click="addToDisplay('6')" class="btn btn-primary col-2">6</button>
+        <button @click="addToDisplay('+')" class="btn btn-primary col-3">+</button>
+      </div>
+      <div class="row justify-content-center">
+        <button @click="addToDisplay('1')" class="btn btn-primary col-2">1</button>
+        <button @click="addToDisplay('2')" class="btn btn-primary col-2">2</button>
+        <button @click="addToDisplay('3')" class="btn btn-primary col-2">3</button>
+        <button @click="addToDisplay('-')" class="btn btn-primary col-3">-</button>
+      </div>
+      <div class="row justify-content-center">
+        <button @click="addToDisplay('0')" class="btn btn-primary col-2">0</button>
+        <button @click="addToDisplay('*')" class="btn btn-primary col-2">*</button>
+        <button @click="addToDisplay('/')" class="btn btn-primary col-2">/</button>
+        <button @click="calculateResult" class="btn btn-success col-3">=</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
